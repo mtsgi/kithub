@@ -25,11 +25,9 @@
     <%= link_to( @app.genre ) %><br>
     作者のWebサイト<br>
     <%= link_to( "Webサイトへアクセス", @app.url ) %><br>
-    アプリの削除<br>
-    <%= link_to '削除', @app, method: :delete, data: { confirm: 'Are you sure?' } %>
+    アプリの操作<br>
+    <%= link_to '編集', edit_app_path(@app) %> / <%= link_to '削除', @app, method: :delete, data: { confirm: 'Are you sure?' } %><br>
   </article>
 </div>
 
-
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<%= link_to 'アプリ一覧へ', apps_path %>

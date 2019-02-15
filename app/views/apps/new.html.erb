@@ -1,5 +1,11 @@
-<h1>New App</h1>
+<h1>
+<%= @title = "アプリの追加" %>
+<a id="star">Star</a>
+</h1>
 
-<%= render 'form', app: @app %>
-
+<div class="main">
+  <article>
+    <%= render "form", app: @app %>
+  </article>
+</div>
 <%= link_to 'Back', apps_path %>

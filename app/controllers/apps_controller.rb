@@ -25,7 +25,7 @@ class AppsController < ApplicationController
   # POST /apps.json
   def create
     @app = App.new(app_params)
-    @app.data = params[:app][:data].read
+    @app.data = params[:app][:data].read if( @app.data.present? )
 
     respond_to do |format|
       if @app.save

@@ -1,13 +1,10 @@
 <%= form_with(model: app, local: true) do |form| %>
   <% if app.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(app.errors.count, "error") %> prohibited this app from being saved:</h2>
-
-      <ul>
+      <div>エラー(<%= app.errors.count %>)</div>
       <% app.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div>・<%= message %></div>
       <% end %>
-      </ul>
     </div>
   <% end %>
 
