@@ -1,0 +1,23 @@
+<% @title = params[:q] %>
+
+<h1>
+search / <%= params[:q] %>
+<a id="star">Star</a>
+</h1>
+    <article>
+        <div class="desc">
+            「<%= params[:q] %>」の検索結果です(<%= @apps.count %>件)。
+        </div>
+    </article>
+<% @apps.each do |app| %>
+  <div class="app">
+    <%= link_to( app.author+"/"+app.appid , app) %>
+    <div class="app-desc"><strong><%= app.name %></strong><br><%= app.desc %></div>
+  </div>
+<% end %>
+<% if( @apps.count == 0 ) %>
+  <div class="app">
+    アプリケーションが見つかりませんでした<br>
+    検索ワードを変えて再度お試しください
+  </div>
+<% end %>

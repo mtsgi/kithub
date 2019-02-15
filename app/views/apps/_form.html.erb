@@ -12,36 +12,43 @@
     <%= form.label :name %>
     <%= form.text_field :name, id: :app_name %>
   </div>
+  <div class="field-desc">アプリケーションの名前です(define.jsonにおけるnameに相当)。日本語を使用することができます。</div>
 
   <div class="field">
     <%= form.label :appid %>
     <%= form.text_field :appid, id: :app_appid %>
   </div>
+  <div class="field-desc">アプリケーションの識別子です(define.jsonにおけるidに相当)。他のアプリケーションと重複することはできません。</div>
 
   <div class="field">
     <%= form.label :author %>
     <%= form.text_field :author, id: :app_author %>
   </div>
+  <div class="field-desc">アプリケーションの作者名です(define.jsonにおけるauthorに相当)。kitHubでは必須の項目です。</div>
 
   <div class="field">
     <%= form.label :desc %>
     <%= form.text_field :desc, id: :app_desc %>
   </div>
+  <div class="field-desc">アプリケーションの説明文です。ダウンロードしようとしている人に向けてアプリを紹介する文章となります(任意)。</div>
 
   <div class="field">
     <%= form.label :genre %>
     <%= form.text_field :genre, id: :app_genre %>
   </div>
+  <div class="field-desc">アプリケーションのジャンルを指定します(任意)。日本語を使用することができます。</div>
 
   <div class="field">
     <%= form.label :url %>
     <%= form.text_field :url, id: :app_url %>
   </div>
+  <div class="field-desc">アプリまたは作者のWebサイトを指定できます(任意)。</div>
 
   <div class="field">
     <%= form.label :data %>
     <%= form.file_field :data, id: :app_data %>
   </div>
+  <div class="field-desc">アプリケーションをzipファイルに圧縮したものを選択してください(必須)。zip以外の形式で圧縮しないでください。</div>
 
   <div class="actions">
     <%= form.submit %>

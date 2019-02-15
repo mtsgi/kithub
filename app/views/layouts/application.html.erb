@@ -11,8 +11,15 @@
   <body>
     <header>
     <%= link_to( image_tag("logo.png"), :root ) %>
-    <%= text_field_tag( "word", "", placeholder: "検索" ) %>
+    <%= form_tag( :search_apps, method: :get) do %>
+      <%= text_field_tag( "q", params[:q], placeholder: "検索" ) %>
+    <% end %>
     </header>
     <%= yield %>
+    <footer>
+      ©2019 kitHub
+      <%= link_to("すべてのアプリ", apps_path) %>
+      <%= link_to("アプリの投稿", new_app_path) %>
+    </footer>
   </body>
 </html>

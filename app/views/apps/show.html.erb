@@ -2,9 +2,9 @@
 <% @title = @app.author+"/"+@app.appid %>
 
 <h1>
-<%= link_to( @app.author ) %>
+<%= link_to( @app.author, "/apps/search?q="+@app.author ) %>
 /
-<%= link_to( @app.appid ) %>
+<strong><%= link_to( @app.appid ) %></strong>
 <a id="star">Star</a>
 </h1>
 
@@ -17,17 +17,24 @@
         <%= @app.desc %>
       <% else %>
         説明はありません。
-        <% end %>
+      <% end %>
     </div>
     アプリの作者<br>
-    <%= link_to( @app.author ) %><br>
+    <%= link_to( @app.author, "/apps/search?q="+@app.author ) %><br>
     ジャンル<br>
-    <%= link_to( @app.genre ) %><br>
+    <% if( @app.genre.present? ) %>
+      <%= @app.genre %>
+    <% else %>
+      未登録
+    <% end %>
+    <br>
     作者のWebサイト<br>
-    <%= link_to( "Webサイトへアクセス", @app.url ) %><br>
+    <% if( @app.url.present? ) %>
+      <%= link_to( "Webサイトへアクセス", @app.url ) %>
+    <% else %>
+      未登録
+    <% end %><br>
     アプリの操作<br>
-    <%= link_to '編集', edit_app_path(@app) %> / <%= link_to '削除', @app, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+    <%= link_to '編集', edit_app_path(@app) %> / <%= link_to '削除', @app, method: :delete, data: { confirm: '本当にアプリケーションを削除しますか？(この操作は取り消せません)' } %><br>
   </article>
 </div>
-
-<%= link_to 'アプリ一覧へ', apps_path %>

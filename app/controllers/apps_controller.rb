@@ -67,6 +67,11 @@ class AppsController < ApplicationController
     send_data( @app.data, type: "application/zip", filename: @app.appid+".zip" )
   end
 
+  def search
+    @apps = App.search(params[:q])
+    render("search")
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_app
