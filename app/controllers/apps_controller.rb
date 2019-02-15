@@ -28,6 +28,11 @@ class AppsController < ApplicationController
     @app = App.new(app_params)
     @app.data = params[:app][:data].read if( @app.data.present? )
 
+    if( @app.appid == "new" )
+      render(plain: "使用できないアプリケーションIDです。")
+      return
+    end
+
     respond_to do |format|
       if @app.save
         format.html { redirect_to "/apps/"+@app.appid, notice: 'App was successfully created.' }

@@ -2,12 +2,12 @@
 
 <h1>
 <%= @title = "All Apps" %>
-<a id="star">Star</a>
+<a id="star" onclick="unstar()">Unstar</a>
 </h1>
 
 <% @apps.each do |app| %>
   <div class="app">
-    <%= link_to( app.author+"/"+app.appid , "/apps/"+app.appid) %>
+    <%= link_to( app.author+" / "+app.appid , "/apps/"+app.appid) %>
     <div class="app-desc"><strong><%= app.name %></strong><br><%= app.desc %></div>
   </div>
 <% end %>

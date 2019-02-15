@@ -5,6 +5,7 @@
 
 <div class="main">
   <article>
+    <%= link_to("アプリのページへ戻る", "/apps/"+@app.appid) %>
     <%= render "form", app: @app %>
   </article>
 </div>

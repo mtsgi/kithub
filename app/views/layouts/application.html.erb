@@ -21,7 +21,10 @@
     <footer>
       ©2019 kitHub
       <%= link_to("すべてのアプリ", apps_path) %>
-      <%= link_to("アプリの投稿", new_app_path) %>
+      <%= link_to("アプリの追加", new_app_path) %>
+      <% if( cookies[:star] ) %>
+        <%= link_to("★", cookies[:star]) %>
+      <% end %>
     </footer>
   </body>
 </html>
