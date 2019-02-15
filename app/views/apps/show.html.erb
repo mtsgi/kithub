@@ -35,6 +35,6 @@
       未登録
     <% end %><br>
     アプリの操作<br>
-    <%= link_to '編集', edit_app_path(@app) %> / <%= link_to '削除', @app, method: :delete, data: { confirm: '本当にアプリケーションを削除しますか？(この操作は取り消せません)' } %><br>
+    <%= link_to '編集', edit_app_path(@app.appid) %> / <%= link_to '削除', @app.appid, method: :delete, data: { confirm: '本当にアプリケーションを削除しますか？(この操作は取り消せません)' } %><br>
   </article>
 </div>

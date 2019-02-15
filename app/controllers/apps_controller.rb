@@ -10,6 +10,7 @@ class AppsController < ApplicationController
   # GET /apps/1
   # GET /apps/1.json
   def show
+    render("error") if( !@app.present? )
   end
 
   # GET /apps/new
@@ -29,7 +30,7 @@ class AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to @app, notice: 'App was successfully created.' }
+        format.html { redirect_to "/apps/"+@app.appid, notice: 'App was successfully created.' }
         format.json { render :show, status: :created, location: @app }
       else
         format.html { render :new }
@@ -72,10 +73,17 @@ class AppsController < ApplicationController
     render("search")
   end
 
+  def error
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_app
-      @app = App.find(params[:id])
+      if( App.find_by_id(params[:id]) )
+        @app = App.find_by_id(params[:id]) 
+      else
+        @app = App.find_by_appid(params[:id]) 
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

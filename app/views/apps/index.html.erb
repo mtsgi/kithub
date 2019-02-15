@@ -7,7 +7,7 @@
 
 <% @apps.each do |app| %>
   <div class="app">
-    <%= link_to( app.author+"/"+app.appid , app) %>
+    <%= link_to( app.author+"/"+app.appid , "/apps/"+app.appid) %>
     <div class="app-desc"><strong><%= app.name %></strong><br><%= app.desc %></div>
   </div>
 <% end %>
