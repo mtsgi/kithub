@@ -1,31 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>All Apps
+<h1>
+<%= @title = "All Apps" %>
 <a id="star">Star</a>
 </h1>
-  <tbody>
-    <% @apps.each do |app| %>
-      <div class="app">
-        <%= link_to( app.author+"/"+app.appid , app) %>
-        <div class="app-desc"><strong><%= app.name %></strong><br><%= app.desc %></div>
-      </div>
-      <!--
-      <tr>
-        <td><%= app.name %></td>
-        <td><%= app.appid %></td>
-        <td><%= app.author %></td>
-        <td><%= app.desc %></td>
-        <td><%= app.genre %></td>
-        <td><%= app.url %></td>
-        <td><%= link_to 'Show', app %></td>
-        <td><%= link_to 'Edit', edit_app_path(app) %></td>
-        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      -->
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New App', new_app_path %>
+<% @apps.each do |app| %>
+  <div class="app">
+    <%= link_to( app.author+"/"+app.appid , app) %>
+    <div class="app-desc"><strong><%= app.name %></strong><br><%= app.desc %></div>
+  </div>
+<% end %>

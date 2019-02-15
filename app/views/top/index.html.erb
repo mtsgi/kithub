@@ -7,7 +7,13 @@ kitHub / Home
         <div class="desc">
             kitHubのメインページです。
         </div>
+        kitHub ベータ版 v0.1.0へようこそ。<br>
         ・<%= link_to("kitHubアプリの一覧", apps_path) %> アプリケーションの一覧です<br>
+        ・<%= link_to("kitHubにアプリを投稿する", new_app_path) %> 自身のアプリをkitHubに追加できます<br>
         ・<a href="http://web.kitit.ml/">kitのホームページ</a> kit Desktop Systemのホームページです
+        <%= image_tag("banner.png", class: "image") %><br>
+        kitHubはベータ版です。以下のような機能は今後のデータベースの移行を伴う大きなアップデートによって実装される予定です。<br>
+        ・ユーザーアカウントによるアプリケーションの管理機能<br>
+        ・テーマファイルのアップロードとダウンロード
     </article>
 </div>

@@ -1,39 +1,35 @@
 <p id="notice"><%= notice %></p>
+<% @title = @app.author+"/"+@app.appid %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @app.name %>
-</p>
+<h1>
+<%= link_to( @app.author ) %>
+/
+<%= link_to( @app.appid ) %>
+<a id="star">Star</a>
+</h1>
 
-<p>
-  <strong>Appid:</strong>
-  <%= @app.appid %>
-</p>
+<div class="main">
+  <article>
+    <%= link_to("ダウンロード", {controller: "apps", action: "download"}, class: "button") %>
+    <div class="app-name"><%= @app.name %></div>
+    <div class="desc">
+      <% if( @app.desc.present? ) %>
+        <%= @app.desc %>
+      <% else %>
+        説明はありません。
+        <% end %>
+    </div>
+    アプリの作者<br>
+    <%= link_to( @app.author ) %><br>
+    ジャンル<br>
+    <%= link_to( @app.genre ) %><br>
+    作者のWebサイト<br>
+    <%= link_to( "Webサイトへアクセス", @app.url ) %><br>
+    アプリの削除<br>
+    <%= link_to '削除', @app, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </article>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @app.author %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @app.desc %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @app.genre %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @app.url %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= link_to("ダウンロード", "./"+@app.id.to_s+"/download") %>
-</p>
 
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
