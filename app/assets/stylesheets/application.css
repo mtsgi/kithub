@@ -9,10 +9,14 @@ body{
     background: #000000;
     padding: 6px 0px 0px 6px;
     box-shadow: 0px 0px 3px 0 rgba(0,0,0,.5);
+    height: 58px;
   }
   header a img{
     height: 50px;
   }
+header a:hover{
+  opacity: .7;
+}
   header input{
     float: right;
     background: transparent;
@@ -59,3 +63,24 @@ body{
     padding: 5px;
     background: #000000;
   }
+.app{
+  margin: 6px;
+  padding: 5px;
+  border: 1px solid #909090;
+  border-radius: 4px;
+  background: #ffffff;
+  display:flex;
+}
+.app a{
+  width: 200px;
+  padding: 12px 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background: #f0f0f0;
+}
+.app a:hover{
+  background: #e0e0e0;
+}
+.app-desc{
+  padding-left: 12px;
+}

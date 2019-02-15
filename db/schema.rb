@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190215135858) do
+ActiveRecord::Schema.define(version: 20190215141446) do
 
   create_table "apps", force: :cascade do |t|
     t.string "name", null: false
+    t.string "appid", null: false
     t.string "author", null: false
     t.string "desc", null: false
     t.string "genre"

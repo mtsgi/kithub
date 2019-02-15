@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @app.name %>
+</p>
+
+<p>
+  <strong>Appid:</strong>
+  <%= @app.appid %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @app.author %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @app.desc %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @app.genre %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @app.url %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= link_to("ダウンロード", "./"+@app.id.to_s+"/download") %>
+</p>
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>
