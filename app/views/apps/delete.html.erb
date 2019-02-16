@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<% @title = "Delete" %>
+
+<h1>
+<%= @app.name %> / delete
+<a id="star">Star</a>
+</h1>
+
+<div class="main">
+  <article>
+    <%= link_to("キャンセル", "/apps/"+@app.appid ) %>
+    <div class="app-name">アプリケーションの削除</div>
+    <div class="desc">この操作は取り消せません。</div>
+    以下のアプリケーションを削除しようとしています。
+    <div class="app">
+      <a>対象</a>
+      <div class="app-desc"><strong><%= @app.name %></strong><br><%= @app.desc %></div>
+    </div>
+    <%= link_to '削除する', @app, method: :delete, data: { confirm: '本当にアプリケーションを削除しますか？(この操作は取り消せません)' } %>
+  </article>
+</div>

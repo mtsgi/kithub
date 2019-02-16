@@ -68,6 +68,10 @@ class AppsController < ApplicationController
     end
   end
 
+  def delete
+    set_app
+  end
+
   def download
     if( App.find_by_id(params[:id]) )
       @app = App.find_by_id(params[:id]) 
