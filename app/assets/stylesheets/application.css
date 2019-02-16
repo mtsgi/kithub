@@ -65,9 +65,12 @@ color: orange;
 text-shadow: 0 1px 1px rgba(0,0,0,.5);
 }
 #notice{
-  display: none;
-  color: red;
-  padding: 5px;
+  margin: 0;
+  padding: 0;
+  bottom: 0px;
+  right: 0px;
+  position: fixed;
+  color: #ffffff;
   background: #000000;
 }
 .app{

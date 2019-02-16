@@ -46,7 +46,7 @@
 
   <div class="field">
     <%= form.label :data %>
-    <%= form.file_field :data, id: :app_data %>
+    <%= form.file_field :data, id: :app_data, accept: "application/zip" %>
   </div>
   <div class="field-desc">アプリケーションをzipファイルに圧縮したものを選択してください(必須)。zip以外の形式で圧縮しないでください。</div>
 

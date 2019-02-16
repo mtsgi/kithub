@@ -69,7 +69,11 @@ class AppsController < ApplicationController
   end
 
   def download
-    @app = App.find( params[:id] )
+    if( App.find_by_id(params[:id]) )
+      @app = App.find_by_id(params[:id]) 
+    else
+      @app = App.find_by_appid(params[:id]) 
+    end
     send_data( @app.data, type: "application/zip", filename: @app.appid+".zip" )
   end
 
