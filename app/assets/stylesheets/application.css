@@ -24,6 +24,13 @@ header a img{
 header a:hover{
 opacity: .7;
 }
+header span{
+  color: #ffffff;
+  font-size: 20px;
+  position: absolute;
+  top: 26px;
+  margin-left: 10px;
+}
 header input{
   float: right;
   background: transparent;
